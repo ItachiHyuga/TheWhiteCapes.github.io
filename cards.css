@@ -1,0 +1,181 @@
+img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    font-family: "Courier New", monospace, sans-serif;
+}
+
+body {
+    
+    animation: myanimation 20s infinite;    
+    height: 100%;
+    margin: 0;
+    background-repeat: repeat;
+    scrollbar-color: rgb(255, 216, 194) rgb(128, 128, 128, 0);
+    scrollbar-width: thin
+}
+
+.mainarea {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 15fr 4fr;
+    grid-template-rows: 3fr 1fr;
+    grid-gap: 0px
+}
+
+.mainarea>div {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.7vw
+}
+
+.hand {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(9, auto);
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 48%, rgba(0,0,0,1) 100%);
+}
+
+.draw {
+    background: black;
+    color: greenyellow;
+}
+#playercard, #enemycard{
+    background: #ad1457;
+}
+.stadium {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(3, auto);
+    background: url("darkwood.png");
+    background-repeat: repeat;
+
+    text-shadow: 5px 5px 16px #000;
+    font-size: 2.4vw;
+    text-align: center
+}
+
+
+
+.hand>img {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
+    height: 134px;
+    width: 96px;
+ 
+}
+
+#playercard,
+#enemycard {
+    border-radius: 12px
+}
+
+.message {
+    color: rgb(44, 0, 0);
+    text-shadow: 5px 5px 16px #000;
+    font-size: 2.4vw;
+    text-align: center
+}
+
+.info {
+    color: rgb(44, 0, 0);
+    font-size: 1.4vw;
+    text-align: center
+}
+
+#dict {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 300px;
+    grid-gap: 0px;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    color: rgb(255, 216, 194);
+    position: relative;
+    text-shadow: 5px 5px 16px #000;
+    overflow: hidden;
+    scrollbar-color: rgb(255, 216, 194) rgb(128, 128, 128, 0);
+    scrollbar-width: thin;
+    background: rgba(0, 0, 0, 0.603)
+}
+
+.dict>div, .dict>p {
+    background: rgba(0, 0, 0, 0.603)
+}
+
+#name {
+    font-size: 2.4vw
+}
+
+#Title {
+    font-size: 1.4vw
+}
+
+#ability {
+    font-size: 1.4vw
+}
+
+#card8,
+#card7,
+#card9 {
+    display: none
+}
+
+#menu {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 0px;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 47%, rgba(0, 0, 0, 0.048) 100%);
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    
+    position: relative;
+    text-shadow: 5px 5px 16px #000
+}
+
+
+::-webkit-scrollbar {
+    width: 0.7vw
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(128, 128, 128, 0)
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 216, 194, 0.541)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 216, 194)
+}
+
+.ability {
+    padding-left: 20px;
+    padding-right: 20px;
+    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(2, auto);
+    grid-row-gap: 25px
+}
+
+
+
+
+@keyframes myanimation {
+    0% {background-color: #81E84F;}
+    25%{background-color:#FFD057;}
+    50%{background-color:#FF8C88;}
+    75%{background-color:#A888EB;}
+    100% {background-color: #81E84F;}
+  }
