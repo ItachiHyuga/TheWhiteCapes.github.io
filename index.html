@@ -2,73 +2,114 @@
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="cards.css">
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="cards.css">
+  <script src="song.js"></script>
 </head>
-<style></style>
+<style>
+</style>
 
-<body>
-    <div class="mainarea" id="mainarea">
-        <div id="menu" class="menu">
-            <div onclick="location.reload();">Reload</div>
 
-            <div id="help" class="help" onclick="help();">Help
-            </div>
-            <div id="about" class="about" onclick="about()">About
-            </div>
 
-            <div></div>
-        </div>
+<body onload="startDemo();">
+  <div class="mainarea" id="mainarea">
 
-        <div class="stadium" id="stadium">
-            <div></div>
-            <div></div>
-            <div id="play again"></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div class="enemycard"><img onclick="carddict(this)" id="enemycard" width="192" height="267"></div>
-            <div class="message" id="message">FIGHT!</div>
-            <div class="playercard"><img onclick="carddict(this)" id="playercard" width="192" height="267"></div>
-            <div></div>
-            <div></div>
-            <div id="enemyhp"></div>
-            <div class="info" id="info">
-                <p class="playerinfo" id="playerinfo"></p>
-                <p class="enemyinfo" id="enemyinfo"></p>
-            </div>
-            <div id="playerhp"></div>
-            <div></div>
-        </div>
-
-        <div class="dict" id="dict">
-            <div>
-                <h3 id="name" class="name"></h3>
-            </div>
-            <div>
-                <p id="Title" class="Title"></p>
-            </div>
-            <div>
-                <p id="ability" class="ability"></p>
-            </div>
-        </div>
-        
-        <div class="hand" id="hand">
-            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card1"
-                 > <img onmouseenter="carddict(this)" onclick="card(this)"
-                id="card2"  > <img onmouseenter="carddict(this)"
-                onclick="card(this)" id="card3"  > <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card4"   wid> <img onmouseenter="carddict(this)" onclick="card(this)" id="card5"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card6"
-                 >  <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="legendary"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card8"
-                class="Wilbur"  >
-        </div>
-        <div class="draw" onclick="draw()" id="draw">Draw</div>
+    <div id="menu" class="menu">
+      <div onclick="location.reload();"><img src="reload.png" alt="reload" width="30px" height="30px"></div>
+      <div id="background" onclick="backgroundchange()"> <img src="sun.png" alt="change background" width="30px" height="30px"></div>
+      <div id="help" class="help" onclick="help();" ><img src="help.png" alt="reload" width="30px" height="30px"></div>
+      <div id="about" class="about" onclick="about()"><img src="about.png" alt="about" width="30px" height="30px"></div>
+      <div id="cardguide" class="cardguide"><a href="guide.html" target="_blank"><img src="guide.png" alt="Card Guide" width="30px" height="30px"></a></div>
+      <div></div>
     </div>
+
+
+    <div class="stadium" id="stadium">
+      <div> </div>
+      <div>
+        
+      </div>
+      <div id="play again">
+
+      </div>
+      <div>
+        
+        
+      </div>
+      <div>
+
+      </div>
+      <div></div>
+      <div class="enemycard"><img onclick="carddict(this)" id="enemycard" src="Placecard.jpg" width="192" height="267"></div>
+      
+      <div class="message" id="message">FIGHT!</div>
+      <div class="playercard"><img onclick="carddict(this)" id="playercard" src="Placecard.jpg" width="192" height="267"></div>
+      <div></div>
+
+      <div></div>
+
+      <div id="enemyhp"></div>
+      <div class="info" id="info">
+        <p class="playerinfo" id="playerinfo"></p>
+        <p class="enemyinfo" id="enemyinfo"></p>
+      </div>
+      <div id="playerhp"></div>
+      <div></div>
+
+
+    </div>
+
+    <div class="dict" id="dict">
+      <div>
+      <h3 id="name" class="name"></h3></div>
+      
+      
+      <div><p id="Title" class="Title"></p></div>
+      
+       
+     
+      <div> <p id="ability" class="ability"></p></div>
+      
+    </div>
+
+
+
+    <div id="reset">
+
+    </div>
+
+    <div class="hand" id="hand">
+      <div></div>
+     
+    
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card0" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card1" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card2" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card3" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card4" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card5" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card6" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="Piper" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card8" class="legendary" src="Saitamacard.jpg" width="96" height="134">
+      <img onmouseenter="carddict(this)" onclick="card(this)" id="card9" class="Wilbur" src="Saitamacard.jpg" width="96" height="134">
+      
+
+    </div>
+
+
+    <div class="draw" onclick="draw()" id="draw">
+      <img id="Saitama" src="Saitama.jpg"  width="96" height="134">
+    </div>
+  </div>
+
 </body>
 <script src="app.js"></script>
 
+
+
 </html>
+
+
+
+
+ 
