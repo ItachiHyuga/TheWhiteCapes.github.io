@@ -10,15 +10,16 @@
 <body>
     <div class="mainarea" id="mainarea">
         <div id="menu" class="menu">
-            <div onclick="location.reload();"><img src="reload.png" alt="reload" width="30px" height="30px"></div>
-      
-            <div id="help" class="help" onclick="help();"><img src="help.png" alt="reload" width="30px" height="30px">
+            <div onclick="location.reload();">Reload</div>
+
+            <div id="help" class="help" onclick="help();">Help
             </div>
-            <div id="about" class="about" onclick="about()"><img src="about.png" alt="about" width="30px" height="30px">
+            <div id="about" class="about" onclick="about()">About
             </div>
-          
+
             <div></div>
         </div>
+
         <div class="stadium" id="stadium">
             <div></div>
             <div></div>
@@ -26,11 +27,9 @@
             <div></div>
             <div></div>
             <div></div>
-            <div class="enemycard"><img onclick="carddict(this)" id="enemycard" src="Placecard.png" width="192"
-                    height="267"></div>
+            <div class="enemycard"><img onclick="carddict(this)" id="enemycard" width="192" height="267"></div>
             <div class="message" id="message">FIGHT!</div>
-            <div class="playercard"><img onclick="carddict(this)" id="playercard" src="Placecard.png" width="192"
-                    height="267"></div>
+            <div class="playercard"><img onclick="carddict(this)" id="playercard" width="192" height="267"></div>
             <div></div>
             <div></div>
             <div id="enemyhp"></div>
@@ -41,6 +40,7 @@
             <div id="playerhp"></div>
             <div></div>
         </div>
+
         <div class="dict" id="dict">
             <div>
                 <h3 id="name" class="name"></h3>
@@ -52,23 +52,21 @@
                 <p id="ability" class="ability"></p>
             </div>
         </div>
-        <div id="reset"></div>
+        
         <div class="hand" id="hand">
-            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0" src="Saitamacard.png"
-                width="96" height="134"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card1"
-                src="Saitamacard.png" width="96" height="134"> <img onmouseenter="carddict(this)" onclick="card(this)"
-                id="card2" src="Saitamacard.png" width="96" height="134"> <img onmouseenter="carddict(this)"
-                onclick="card(this)" id="card3" src="Saitamacard.png" width="96" height="134"> <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card4" src="Saitamacard.png" width="96"
-                height="134"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card5" src="Saitamacard.png"
-                width="96" height="134"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card6"
-                src="Saitamacard.png" width="96" height="134"> <img onmouseenter="carddict(this)" onclick="card(this)"
-                id="card7" class="Piper" src="Saitamacard.png" width="96" height="134"> <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card8" class="legendary" src="Saitamacard.png"
-                width="96" height="134"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card9"
-                class="Wilbur" src="Saitamacard.png" width="96" height="134">
+            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0"  
+            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card1"
+                 > <img onmouseenter="carddict(this)" onclick="card(this)"
+                id="card2"  > <img onmouseenter="carddict(this)"
+                onclick="card(this)" id="card3"  > <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card4"   wid> <img onmouseenter="carddict(this)" onclick="card(this)" id="card5"  
+            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card6"
+                 >  <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="legendary"  
+            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card8"
+                class="Wilbur"  >
         </div>
-        <div class="draw" onclick="draw()" id="draw"> <img id="Saitama" src="Saitama.png" width="96" height="134"></div>
+        <div class="draw" onclick="draw()" id="draw">Draw</div>
     </div>
 </body>
 <script src="app.js"></script>
