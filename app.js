@@ -14,6 +14,8 @@ var truedamage = 0;
 var enemyhand = [];
 var playerhand = [];
 var destroyed = 0;
+var ax="#4527a0"
+var ay="#80d8ff"
 
 
 var enemy = {
@@ -213,6 +215,7 @@ var playercards = {
             }
 
             enemy.hp = enemy.hp - physicaldamage;
+            ay="#bf360c"
 
 
         }
@@ -231,7 +234,7 @@ var playercards = {
                 physicaldamage = 0;
                 alchemydamage = 0;
             };
-
+            ay="#2d9aff"
 
         }
 
@@ -251,7 +254,7 @@ var playercards = {
             physicaldamage = 0;
 
             if (playercards.Florent.number == 1) {};
-
+            ay="#00564f"
 
         }
 
@@ -273,7 +276,7 @@ var playercards = {
             }
 
             enemy.hp = enemy.hp - physicaldamage;
-
+            ay="#004bff"
         },
         summonagain: function () {
             physicaldamage = 25;
@@ -312,7 +315,7 @@ var playercards = {
             }
 
             enemy.hp = enemy.hp - alchemydamage;
-
+            ay="#e64a19"
 
         }
 
@@ -349,7 +352,7 @@ var playercards = {
             }
 
             enemy.hp = enemy.hp - alchemydamage - physicaldamage;
-
+            ay="#880e4f"
 
         }
 
@@ -369,7 +372,7 @@ var playercards = {
                 alchemydamage = 0;
             };
 
-
+            ay="#000d2b"
         }
 
     },
@@ -396,7 +399,7 @@ var playercards = {
 
             }
 
-
+            ay="#01261f"
 
         }
 
@@ -424,7 +427,7 @@ var playercards = {
             }
 
             enemy.hp = enemy.hp - physicaldamage;
-
+            ay="#e65100"
         }
 
     },
@@ -440,12 +443,12 @@ var playercards = {
             let ally=playercardsarr[Math.floor(Math.random() * playercardsarr.length)];
             playerhand.push(ally);
             preplayerdeck[9] = ally;
-            document.getElementById("card9").style.display = "block";
-            document.getElementById("card9").src = ally + ".png";
+            document.getElementById("card8").style.display = "block";
+            document.getElementById("card8").src = ally + ".png";
 
             enemy.hp = enemy.hp - 50;
             player.moves++;
-
+            ay="#ddd9e0"
 
 
             
@@ -474,7 +477,7 @@ var playercards = {
 
             enemy.hp = enemy.hp - alchemydamage;
 
-            
+            ay="#1e7600"
 
         }
 
@@ -500,7 +503,7 @@ var playercards = {
             removecard(enemyhand, destroyed);
          
             enemy.moves--;
-
+            ay="#602896"
         }
     },
 
@@ -555,7 +558,7 @@ var enemycards = {
             }
 
             player.hp = player.hp - physicaldamage;
-
+            ax="#ffeb3b"
         }
 
     },
@@ -572,7 +575,7 @@ var enemycards = {
             }
 
             player.hp = player.hp - physicaldamage;
-
+            ax="#5889ff"
 
         },
         summonagain: function () {
@@ -607,7 +610,7 @@ var enemycards = {
             }
 
             player.hp = player.hp - alchemydamage;
-
+            ax="#ffab91"
         }
 
     },
@@ -637,7 +640,7 @@ var enemycards = {
 
             player.hp = player.hp - alchemydamage - physicaldamage;
 
-
+            ax="#851f00"
         }
 
     },
@@ -651,7 +654,7 @@ var enemycards = {
                 player.hp = player.hp - Math.round(alchemydamage / 2);
                 alchemydamage = 0;
             };
-
+            ax="#a3beff"
 
         }
 
@@ -672,7 +675,7 @@ var enemycards = {
                 enemy.hp = enemy.hp + Math.round((maxhp - enemy.hp) / 2);
 
             };
-
+            ax="#b2ff59"
         }
 
 
@@ -690,7 +693,7 @@ var enemycards = {
             physicaldamage = 0;
 
             if (enemycards.Florent.number == 1) {};
-
+                ax="#00d2c1"
 
         }
 
@@ -713,7 +716,7 @@ var enemycards = {
             }
 
             player.hp = player.hp - physicaldamage;
-
+            ax="#ffea00"
         }
 
     },
@@ -729,6 +732,7 @@ var enemycards = {
 
             player.hp = player.hp - 50;
             enemy.moves++;
+            ax="#3e1a61"
         }
 
     },
@@ -751,7 +755,7 @@ var enemycards = {
 
             player.hp = player.hp - alchemydamage;
 
-            
+            ax="#2eb200"
 
         }
 
@@ -775,7 +779,7 @@ var enemycards = {
             removecard(playerhand, player.legendarycard);
            
             player.moves--;
-
+            ax="#3e1a61"
         }
     },
 
@@ -942,7 +946,8 @@ function fight() {
 
     document.getElementById("enemyhp").innerHTML = enemy.name+" HP =" + enemy.hp + "/" +maxhp;
     document.getElementById("playerhp").innerHTML = player.name+" HP =" + player.hp + "/"+maxhp;
-
+    document.body.style="background: linear-gradient(289deg, "+ay+", "+ax+");animation: AnimationName 7s ease infinite;background-size: 400% 400%;"
+    console.log(ax, ay)
     if (player.moves<=0 & enemy.moves >0)
     {
        let l=enemyhand.length;
