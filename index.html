@@ -4,10 +4,11 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="cards.css">
+    <script src="song.js"></script>
 </head>
 <style></style>
 
-<body>
+<body onload="start()">
     <div class="mainarea" id="mainarea">
         <div id="menu" class="menu">
             <div onclick="location.reload();">Reload</div>
@@ -52,19 +53,15 @@
                 <p id="ability" class="ability"></p>
             </div>
         </div>
-        
+
         <div class="hand" id="hand">
-            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card1"
-                 > <img onmouseenter="carddict(this)" onclick="card(this)"
-                id="card2"  > <img onmouseenter="carddict(this)"
-                onclick="card(this)" id="card3"  > <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card4"   wid> <img onmouseenter="carddict(this)" onclick="card(this)" id="card5"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card6"
-                 >  <img
-                onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="legendary"  
-            > <img onmouseenter="carddict(this)" onclick="card(this)" id="card8"
-                class="Wilbur"  >
+            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0"> <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card1"> <img onmouseenter="carddict(this)"
+                onclick="card(this)" id="card2"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card3">
+            <img onmouseenter="carddict(this)" onclick="card(this)" id="card4" wid> <img onmouseenter="carddict(this)"
+                onclick="card(this)" id="card5"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card6">
+            <img onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="legendary"> <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card8" class="Wilbur">
         </div>
         <div class="draw" onclick="draw()" id="draw">Draw</div>
     </div>

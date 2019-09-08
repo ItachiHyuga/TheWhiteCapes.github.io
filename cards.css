@@ -12,7 +12,10 @@ html {
 
 body {
     
-    animation: myanimation 20s infinite;    
+    background: linear-gradient(289deg, #5f2408, #076502);
+    background-size: 400% 400%;
+    
+    animation: AnimationName 8s ease infinite;   
     height: 100%;
     margin: 0;
     background-repeat: repeat;
@@ -20,6 +23,12 @@ body {
     scrollbar-width: thin
 }
 
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 .mainarea {
     height: 100%;
     display: grid;
@@ -135,8 +144,8 @@ body {
     grid-template-columns: auto;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0px;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 47%, rgba(0, 0, 0, 0.048) 100%);
+    background: rgb(0,0,0);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 16%, rgba(34,193,195,0.7763305151162028) 63%, rgba(253,187,45,0.7231092266007966) 100%);
     background-repeat: no-repeat !important;
     background-size: cover !important;
     
@@ -171,11 +180,3 @@ body {
 
 
 
-
-@keyframes myanimation {
-    0% {background-color: #81E84F;}
-    25%{background-color:#FFD057;}
-    50%{background-color:#FF8C88;}
-    75%{background-color:#A888EB;}
-    100% {background-color: #81E84F;}
-  }
