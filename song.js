@@ -474,3 +474,155 @@
      }
    }, 0);
  }
+
+
+ var victory = {
+  songData: [
+    { // Instrument 0
+      i: [
+      0, // OSC1_WAVEFORM
+      255, // OSC1_VOL
+      152, // OSC1_SEMI
+      0, // OSC1_XENV
+      0, // OSC2_WAVEFORM
+      255, // OSC2_VOL
+      152, // OSC2_SEMI
+      12, // OSC2_DETUNE
+      0, // OSC2_XENV
+      0, // NOISE_VOL
+      2, // ENV_ATTACK
+      0, // ENV_SUSTAIN
+      60, // ENV_RELEASE
+      0, // ARP_CHORD
+      0, // ARP_SPEED
+      0, // LFO_WAVEFORM
+      0, // LFO_AMT
+      0, // LFO_FREQ
+      0, // LFO_FX_FREQ
+      2, // FX_FILTER
+      255, // FX_FREQ
+      0, // FX_RESONANCE
+      0, // FX_DIST
+      32, // FX_DRIVE
+      47, // FX_PAN_AMT
+      3, // FX_PAN_FREQ
+      157, // FX_DELAY_AMT
+      2 // FX_DELAY_TIME
+      ],
+      // Patterns
+      p: [1],
+      // Columns
+      c: [
+        {n: [137,,,140,,,144],
+         f: []}
+      ]
+    },
+  ],
+  rowLen: 5513,   // In sample lengths
+  patternLen: 12,  // Rows per pattern
+  endPattern: 0,  // End pattern
+  numChannels: 1  // Number of channels
+};
+
+
+
+ function win() {
+  //----------------------------------------------------------------------------
+  // Music data section
+  //----------------------------------------------------------------------------
+
+  // Song data
+
+
+
+  //----------------------------------------------------------------------------
+  // Demo program section
+  //----------------------------------------------------------------------------
+
+  // Initialize music generation (player).
+  var t0 = new Date();
+  var player = new CPlayer();
+  player.init(victory);
+
+  // Generate music...
+  var done = false;
+  setInterval(function () {
+    if (done) {
+      return;
+    }
+
+
+    done = player.generate() >= 1;
+
+    if (done) {
+      var t1 = new Date();
+      
+
+      // Put the generated song in an Audio element.
+      var wave = player.createWave();
+      var audio = document.createElement("audio");
+      audio.src = URL.createObjectURL(new Blob([wave], {
+        type: "audio/wav"
+      }));
+
+      audio.play();
+
+
+
+    }
+  }, 0);
+}
+
+
+
+
+function lost() {
+  //----------------------------------------------------------------------------
+  // Music data section
+  //-----------
+  //----------------------------------------------------------------------------
+  // Demo program section
+  //----------------------------------------------------------------------------
+
+  // Initialize music generation (player).
+  
+victory.songData[0].c=[
+          {n: [137,,,136,,,134],
+           f: []}
+        ]
+  var t0 = new Date();
+  var player = new CPlayer();
+  player.init(victory);
+
+  // Generate music...
+  var done = false;
+  setInterval(function () {
+    if (done) {
+      return;
+    }
+
+
+    done = player.generate() >= 1;
+
+    if (done) {
+      var t1 = new Date();
+      
+
+      // Put the generated song in an Audio element.
+      var wave = player.createWave();
+      var audio = document.createElement("audio");
+      audio.src = URL.createObjectURL(new Blob([wave], {
+        type: "audio/wav"
+      }));
+ 
+      audio.play();
+
+
+
+    }
+  }, 0);
+}
+
+
+
+ 

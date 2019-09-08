@@ -973,12 +973,15 @@ function fight() {
         if (enemy.hp == 0 || player.hp > enemy.hp) {
            
             document.getElementById("message").innerHTML = "YOU WON!";
+            win()
 
         } else if (player.hp <= 0 || player.hp < enemy.hp) {
            
             document.getElementById("message").innerHTML = "YOU LOST!";
+            lost()
         } else if (player.hp==enemy.hp){
             document.getElementById("message").innerHTML = "TIE!";
+            lost()
         }
         
         for(m=0;m<=8;m++)
