@@ -7,14 +7,14 @@ img {
 html {
     height: 100%;
     margin: 0;
-    font-family: "Courier New", monospace, sans-serif;
+
 }
 
 body {
     
-    background: linear-gradient(289deg, #5f2408, #076502);
+    background: linear-gradient(289deg, #ae73ab, #fe8f57);
     background-size: 400% 400%;
-    
+    color:rgb(255, 216, 194);
     animation: AnimationName 8s ease infinite;   
     height: 100%;
     margin: 0;
@@ -49,7 +49,7 @@ body {
     grid-template-columns: repeat(9, auto);
     position: relative;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,0,0,1) 48%, rgba(0,0,0,1) 100%);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, #ff46dd 48%, rgba(0,0,0,1) 100%);
 }
 
 .draw {
@@ -57,7 +57,7 @@ body {
     color: greenyellow;
 }
 #playercard, #enemycard{
-    background: #ad1457;
+    background: #461a3e;
 }
 .stadium {
     display: grid;
@@ -66,7 +66,7 @@ body {
     background: url("darkwood.png");
     background-repeat: repeat;
 
-    text-shadow: 5px 5px 16px #000;
+    text-shadow: 0 0 3px rgb(0, 0, 0), 0 0 5px rgb(0, 0, 0);
     font-size: 2.4vw;
     text-align: center
 }
@@ -75,7 +75,7 @@ body {
 
 .hand>img {
     border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.644), 0 6px 20px 0 rgba(0, 0, 0, 0.623);
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.644), 0 8px 20px 0 rgba(0, 0, 0, 0.623);
     height: 134px;
     width: 96px;
  
@@ -87,14 +87,13 @@ body {
 }
 
 .message {
-    color: rgb(44, 0, 0);
-    text-shadow: 5px 5px 16px #000;
+
     font-size: 2.4vw;
     text-align: center
 }
 
 .info {
-    color: rgb(44, 0, 0);
+
     font-size: 1.4vw;
     text-align: center
 }
@@ -145,7 +144,7 @@ body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 0px;
     background: rgb(0,0,0);
-background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 16%, rgba(34,193,195,0.7763305151162028) 63%, rgba(253,187,45,0.7231092266007966) 100%);
+background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 25%, #461a3e 100%);
     background-repeat: no-repeat !important;
     background-size: cover !important;
     

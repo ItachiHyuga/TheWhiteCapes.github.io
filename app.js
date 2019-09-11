@@ -1052,14 +1052,14 @@ function help() {
     document.getElementById("ability").innerHTML = a.two + "</br></br>" + a.three + "</br></br>" + a.four + "</br></br>" + a.five + "</br></br>" + a.six + "</br></br>" + a.seven + "</br></br>" + a.eight;
 }
 
-// function about() {
-//     document.getElementById("dict").style.display= "none";
-//     document.getElementById("dict").style = "overflow: auto;";
-//     document.getElementById("name").innerHTML = "About";
-//     let a = guide.about;
-//     document.getElementById("Title").innerHTML = a.game;
-//     document.getElementById("ability").innerHTML = a.myself + "</br></br>" + a.Github + "</br></br>" + a.Wattpad;
-// }
+function about() {
+    document.getElementById("dict").style.display= "none";
+    document.getElementById("dict").style = "overflow: auto;";
+    document.getElementById("name").innerHTML = "About";
+    let a = guide.about;
+    document.getElementById("Title").innerHTML = a.game;
+    document.getElementById("ability").innerHTML = a.myself + "</br></br>" + a.Github + "</br></br>" + a.Wattpad;
+}
 
 
 function carddict(x) {
