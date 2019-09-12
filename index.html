@@ -16,7 +16,8 @@
 
             <div id="help" class="help" onclick="help();">Help
             </div>
-           
+            <div id="about" class="about" onclick="about()">About
+            </div>
 
             <div></div>
         </div>
@@ -28,40 +29,40 @@
             <div></div>
             <div></div>
             <div></div>
-            <div class="ecard"><img onclick="cd(this)" id="ecard" width="192" height="267"></div>
+            <div class="enemycard"><img onclick="carddict(this)" id="enemycard" width="192" height="267"></div>
             <div class="ms" id="ms">FIGHT!</div>
-            <div class="pcard"><img onclick="cd(this)" id="pcard" width="192" height="267"></div>
+            <div class="playercard"><img onclick="carddict(this)" id="playercard" width="192" height="267"></div>
             <div></div>
             <div></div>
-            <div id="ehp"></div>
+            <div id="enemyhp"></div>
             <div class="info" id="info">
-                <p class="pinfo" id="pinfo"></p>
-                <p class="einfo" id="einfo"></p>
+                <p class="playerinfo" id="playerinfo"></p>
+                <p class="enemyinfo" id="enemyinfo"></p>
             </div>
-            <div id="php"></div>
+            <div id="playerhp"></div>
             <div></div>
         </div>
 
         <div class="dict" id="dict">
             <div>
-                <h3 id="nm" class="nm"></h3>
+                <h3 id="name" class="name"></h3>
             </div>
             <div>
                 <p id="Title" class="Title"></p>
             </div>
             <div>
-                <p id="aty" class="aty">After 200 years of tyranical rule of the Empire, the people had bourne enough. The White Capes emerged as a backlash to the injustice faced. Violence was inevitable; the revolution was unstoppable. Help the White Capes overthow the King. </p>
+                <p id="ability" class="ability">It is the nuclear winter of 3124. You must go BACK to the past to change this outcome of events. Use strategy to win the battles, so the right people come into power.</p>
             </div>
         </div>
 
         <div class="hand" id="hand">
-            <div></div> <img onmouseenter="cd(this)" onclick="card(this)" id="card0"> <img
-                onmouseenter="cd(this)" onclick="card(this)" id="card1"> <img onmouseenter="cd(this)"
-                onclick="card(this)" id="card2"> <img onmouseenter="cd(this)" onclick="card(this)" id="card3">
-            <img onmouseenter="cd(this)" onclick="card(this)" id="card4" wid> <img onmouseenter="cd(this)"
-                onclick="card(this)" id="card5"> <img onmouseenter="cd(this)" onclick="card(this)" id="card6">
-            <img onmouseenter="cd(this)" onclick="card(this)" id="card7" class="l"> <img
-                onmouseenter="cd(this)" onclick="card(this)" id="card8" class="Wilbur">
+            <div></div> <img onmouseenter="carddict(this)" onclick="card(this)" id="card0"> <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card1"> <img onmouseenter="carddict(this)"
+                onclick="card(this)" id="card2"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card3">
+            <img onmouseenter="carddict(this)" onclick="card(this)" id="card4" wid> <img onmouseenter="carddict(this)"
+                onclick="card(this)" id="card5"> <img onmouseenter="carddict(this)" onclick="card(this)" id="card6">
+            <img onmouseenter="carddict(this)" onclick="card(this)" id="card7" class="legendary"> <img
+                onmouseenter="carddict(this)" onclick="card(this)" id="card8" class="Wilbur">
         </div>
         <div class="draw" onclick="draw()" id="draw">Draw</div>
     </div>
