@@ -86,7 +86,13 @@ body {
     border-radius: 12px
 }
 
-.message {
+.ms {
+
+    font-size: 1.4vw;
+    text-align: center
+}
+
+.msg {
 
     font-size: 2.4vw;
     text-align: center

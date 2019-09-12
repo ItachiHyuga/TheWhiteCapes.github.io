@@ -16,7 +16,7 @@ var playerhand = [];
 var destroyed = 0;
 var ax="#4527a0"
 var ay="#80d8ff"
-
+var ooc=0
 
 var enemy = {
     hp: 200,
@@ -442,15 +442,14 @@ var playercards = {
         summon: function () {
             let ally=playercardsarr[Math.floor(Math.random() * playercardsarr.length)];
             playerhand.push(ally);
-            preplayerdeck[9] = ally;
+            preplayerdeck[8] = ally;
             document.getElementById("card8").style.display = "block";
             document.getElementById("card8").src = ally + ".png";
 
             enemy.hp = enemy.hp - 50;
             player.moves++;
             ay="#ddd9e0"
-
-
+            
             
         }
 
@@ -859,7 +858,7 @@ else {
 
 }
 
-var cardclick = [0, 0, 0, 0, 0, 0, 0];
+var cardclick = [0, 0, 0, 0, 0, 0, 0, 0];
 
 
 //
@@ -958,24 +957,26 @@ function fight() {
            
        }
        enemy.moves=0
+       ooc=1
     }
 
     if (player.moves>0 & enemy.moves <=0)
     {
         document.getElementById("enemyinfo").innerHTML=enemy.name+" is out of cards!";
+        ooc=1
     }
 
     
     
 
 
-    if (enemy.hp == 0 || player.hp == 0 || (enemy.moves<=0 & player.moves<=0)) {
-        if (enemy.hp == 0 || player.hp > enemy.hp) {
+    if (enemy.hp == 0 || player.hp == 0 || (enemy.moves<=0 & player.moves<=0) || ooc==1) {
+        if ( player.hp > enemy.hp) {
            
             document.getElementById("message").innerHTML = "YOU WON!";
             win()
 
-        } else if (player.hp <= 0 || player.hp < enemy.hp) {
+        } else if ( player.hp < enemy.hp) {
            
             document.getElementById("message").innerHTML = "YOU LOST!";
             lost()
