@@ -26,7 +26,7 @@ var enemy = {
     nextmove: "",
     type: [""],
     discardpile: [],
-    name: "Terminator",
+    name: "Opponent",
     legendary: ["Edwin", "Roderick", "Wilbur", "Triston"],
     legendarycard : ""
 };
@@ -963,7 +963,7 @@ function fight() {
     if (player.moves>0 & enemy.moves <=0)
     {
         document.getElementById("enemyinfo").innerHTML=enemy.name+" is out of cards!";
-        ooc=1
+       
     }
 
     
@@ -971,17 +971,19 @@ function fight() {
 
 
     if (enemy.hp == 0 || player.hp == 0 || (enemy.moves<=0 & player.moves<=0) || ooc==1) {
+        document.getElementById("playerinfo").innerHTML ='<div onclick="location.reload();">PLAY AGAIN!</div>'
+        document.getElementById("playerinfo").style.background='rgba(0, 0, 0, 0.603)'
         if ( player.hp > enemy.hp) {
            
-            document.getElementById("message").innerHTML = "YOU WON!";
+            document.getElementById("ms").innerHTML = "YOU WON!";
             win()
 
         } else if ( player.hp < enemy.hp) {
            
-            document.getElementById("message").innerHTML = "YOU LOST!";
+            document.getElementById("ms").innerHTML = "YOU LOST!";
             lost()
         } else if (player.hp==enemy.hp){
-            document.getElementById("message").innerHTML = "TIE!";
+            document.getElementById("ms").innerHTML = "TIE!";
             lost()
         }
         
