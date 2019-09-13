@@ -72,87 +72,14 @@ function randomnumber(number) {
     //fetches a number random number starting from 0. input nos. of number
 }
 
-function backgroundchange() {
-    document.getElementById("stadium").style = 'background: url("greenwood.png");';
-    document.body.style = 'background: url("bridge.png");';
-}
 
 
 
-function playerhealth(damage) {
-    var elem = document.getElementById("animate");
-    var elem2 = document.getElementById("container");
-    var pos = maxhp;
-    var id = setInterval(frame, 5);
-
-    function frame() {
-        if (pos == (maxhp - damage)) {
-            clearInterval(id);
-        } else {
-            pos--;
-
-            elem.style.width = Math.round(pos * 1.92 / (maxhp / 100)) + "px";
-
-        }
-
-    }
-
-    var pos2 = maxhp;
-    var id2 = setInterval(frame2, 25);
-
-    function frame2() {
-        if (pos2 == (maxhp - damage)) {
-            clearInterval(id2);
-        } else {
-            pos2--;
-
-
-            elem2.style.width = Math.round(pos2 * 1.92 / (maxhp / 100)) + "px";
-        }
-
-    }
-}
-
-function enemyhealth(damage) {
-    var elem = document.getElementById("animateenemy");
-    var elem2 = document.getElementById("containerenemy");
-    var pos = maxhp;
-    var id = setInterval(frame, 5);
-
-    function frame() {
-        if (pos == (maxhp - damage)) {
-            clearInterval(id);
-        } else {
-            pos--;
-
-            elem.style.width = Math.round(pos * 1.92 / (maxhp / 100)) + "px";
-
-        }
-
-    }
-
-    var pos2 = maxhp;
-    var id2 = setInterval(frame2, 25);
-
-    function frame2() {
-        if (pos2 == (maxhp - damage)) {
-            clearInterval(id2);
-        } else {
-            pos2--;
-
-
-            elem2.style.width = Math.round(pos2 * 1.92 / (maxhp / 100)) + "px";
-        }
-
-    }
-};
-
-
-
+//both decks are equal. That can be changed in the future when levels are introduced
 var playercardsarr = ["Violet", "Violet", "Violet", "Finch", "Finch", "CarterHill", "CarterHill",  "Rhugh", "Rhugh", "Bill", "Bill", "Thralin", "Thralin", "Thralin", "Evelyn", "Evelyn",  "Florent"];
 var enemycardsarr = ["Violet", "Violet", "Violet", "Finch", "Finch", "CarterHill", "CarterHill",  "Rhugh", "Rhugh", "Bill", "Bill", "Thralin", "Thralin", "Thralin", "Evelyn", "Evelyn",  "Florent"];
 
-
+//for the non minifie version..a lengthier guide
 var guide = {
     howtoplay: {
         one: "The main objective of the game is to have higher health points(HP) than the enemy at the completion of both hands.",
@@ -795,15 +722,8 @@ var enemycards = {
 
         }
     },
-
-    undefined: {
-        name: "placecard",
-        type: [""],
-        summon: function () {
-
-        }
-
-    }
+//no placecard to save space
+   
 
 
 }
@@ -814,6 +734,7 @@ var enemycards = {
 enemylegendary = enemy.legendary[Math.floor(Math.random() * enemy.legendary.length)];
 removecard(enemy.legendary, enemylegendary);
 
+//enemy draws cards at random except for legendaries
 if (enemylegendary=="Edwin" || enemylegendary=="Roderick")
 {
     enemyhand[0]=enemylegendary;
@@ -827,6 +748,8 @@ for (i = 1; i < 8; i++) {
 
 };
 }
+
+//enemy AI for drawing legendaries
 else if(enemylegendary=="Triston"){
     let Tristoncard=randomnumber(3)+5;
     for (i = 0; i < Tristoncard; i++) {
@@ -858,20 +781,22 @@ else {
 
 }
 
+//first click flips the card, next flip plays it
 var cardclick = [0, 0, 0, 0, 0, 0, 0, 0];
 
 
-//
+
 
 function card(path) {
     let i = path.getAttribute("id");
     i = i.slice(-1);
     i = parseInt(i);
-
+    //flip the card
     if (cardclick[i] == 0) {
         path.src = preplayerdeck[i] + ".png";
         cardclick[i]++;
     } else {
+        //play the card
         playerdeck[cardnumber] = preplayerdeck[i];
         removecard(playerhand,playerdeck[cardnumber]);
         cardnumber++;
@@ -881,11 +806,13 @@ function card(path) {
         fight();
     }
 }
-//
+
+
+//The one function where it all concludes! XD
 
 
 function fight() {
-
+    //checks enemy and player cards for type
     player.currentmove = playerdeck[turn - 1];
 
 
@@ -897,10 +824,11 @@ function fight() {
 
     player.type = playercards[player.currentmove].type;
     
-
+    
 
  
-
+    //for our dear Sir carter Hill whose abilities do damage next turn as well. 
+    //This does not count as 2 summons. Just in case of a future nerf or buff
     if (turn > 1) {
         player.pastmove = playerdeck[turn - 2]; 
         enemy.pastmove = enemy.discardpile[turn-2]
@@ -917,14 +845,15 @@ function fight() {
    
     
  
-
+    //cards called into battle
     document.getElementById("enemycard").src = enemy.currentmove + ".png";
     enemycards[enemy.currentmove].summon();
     playercards[player.currentmove].summon();
+    //The commented out section describes the card action.
     //document.getElementById("enemyinfo").innerHTML = "Enemy did " + enemycards[enemy.currentmove].summon();
     //document.getElementById("playerinfo").innerHTML = playercards[player.currentmove].summon();
 
-
+    //sets the number of times the card was summoned straight. reduces the number from the cards object
     enemy.discardpile[turn-1]=enemy.currentmove;
     enemycards[enemy.currentmove].number--;
     playercards[player.currentmove].number--;
@@ -933,7 +862,7 @@ function fight() {
 
 
     turn++;
-
+    //in case hp goes lower than 0
     if (enemy.hp<0)
     {
         enemy.hp=0;
@@ -943,8 +872,11 @@ function fight() {
         player.hp=0;
     }
 
+
     document.getElementById("enemyhp").innerHTML = enemy.name+" HP =" + enemy.hp + "/" +maxhp;
     document.getElementById("playerhp").innerHTML = player.name+" HP =" + player.hp + "/"+maxhp;
+
+    //The changing background according to card used. Want cards to a personality of their own. 
     document.body.style="background: linear-gradient(289deg, "+ay+", "+ax+");animation: AnimationName 7s ease infinite;background-size: 400% 400%;"
     console.log(ax, ay)
     if (player.moves<=0 & enemy.moves >0)
@@ -957,7 +889,7 @@ function fight() {
            
        }
        enemy.moves=0
-       ooc=1
+     
     }
 
     if (player.moves>0 & enemy.moves <=0)
@@ -969,8 +901,8 @@ function fight() {
     
     
 
-
-    if (enemy.hp == 0 || player.hp == 0 || (enemy.moves<=0 & player.moves<=0) || ooc==1) {
+    //Conclusion
+    if (enemy.hp == 0 || player.hp == 0 || (enemy.moves<=0 & player.moves<=0)) {
         document.getElementById("playerinfo").innerHTML ='<div onclick="location.reload();">PLAY AGAIN!</div>'
         document.getElementById("playerinfo").style.background='rgba(0, 0, 0, 0.603)'
         if ( player.hp > enemy.hp) {
@@ -999,6 +931,8 @@ function fight() {
 
 }
 
+
+//number of times draw button is pressed
 var draw1 = 0;
 
 
@@ -1039,7 +973,7 @@ function draw() {
     }
 }
 
-
+//displays card info
 function displayinfo(card) {
     document.getElementById("dict").style.background = "url(" + card + ".png)";
     document.getElementById("name").innerHTML = playercards[card].name;
@@ -1047,6 +981,8 @@ function displayinfo(card) {
     document.getElementById("ability").innerHTML = playercards[card].ability + "</br></br>" + playercards[card].lore;
 }
 
+
+//help section, had to modify for minified version
 function help() {
     document.getElementById("dict").style = "overflow: auto;";
     document.getElementById("name").innerHTML = "How to Play";
@@ -1055,6 +991,8 @@ function help() {
     document.getElementById("ability").innerHTML = a.two + "</br></br>" + a.three + "</br></br>" + a.four + "</br></br>" + a.five + "</br></br>" + a.six + "</br></br>" + a.seven + "</br></br>" + a.eight;
 }
 
+
+//About section. Had to ccompletely remove from minified Version
 function about() {
     document.getElementById("dict").style.display= "none";
     document.getElementById("dict").style = "overflow: auto;";
@@ -1079,5 +1017,5 @@ function carddict(x) {
 
 
 
-//if no cards removed, enemy.moves shouldn't subtract
+
 
